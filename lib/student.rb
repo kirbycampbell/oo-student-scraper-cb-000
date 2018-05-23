@@ -5,15 +5,10 @@ class Student
   @@all = []
 
   def initialize(student_hash)
-    @name = name
-    @location = location
-    @twitter = twitter
-    @linkedin = linkedin
-    @github = github
-    @blog = blog
-    @profile_quote = profile_quote
-    @bio = bio
-    @profile_url = profile_url
+    student_hash.each do |key, data|
+      self.send(("#{key}="), data)
+      self.all << self
+    end
   end
 
   def self.create_from_collection(students_array)
