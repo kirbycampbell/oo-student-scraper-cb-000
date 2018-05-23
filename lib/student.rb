@@ -7,7 +7,7 @@ class Student
   def initialize(student_hash)
     self.add_student_attributes(student_hash)
       @@all << self
-    end
+
   end
 
   def self.create_from_collection(students_array)
